@@ -30,11 +30,4 @@ class PostsController < ApplicationController
       render :action => 'edit'
     end
   end
-  
-  def destroy
-    @post = Post.find(params[:id])
-    @post.destroy
-    flash[:notice] = "Successfully destroyed post."
-    redirect_to posts_url
-  end
 end

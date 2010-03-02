@@ -39,11 +39,4 @@ class PostsControllerTest < ActionController::TestCase
     put :update, :id => Post.first
     assert_redirected_to posts_url
   end
-  
-  def test_destroy
-    post = Post.first
-    delete :destroy, :id => post
-    assert_redirected_to posts_url
-    assert !Post.exists?(post.id)
-  end
 end
