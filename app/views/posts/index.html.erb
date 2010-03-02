@@ -1,15 +1,16 @@
-<% title "Posts" %>
+<% title "GreatWF" %>
 
 <table>
   <tr>
     <th>Name</th>
-    <th>Content</th>
+    <th>Context</th>
   </tr>
   <% for post in @posts %>
     <tr>
       <td><%=h post.name %></td>
-      <td><%=h post.content %></td>
+      <td><%=h post.context %></td>
       <td><%= link_to "Edit", edit_post_path(post) %></td>
+      <td><%= link_to "Destroy", post, :confirm => 'Are you sure?', :method => :delete %></td>
     </tr>
   <% end %>
 </table>
