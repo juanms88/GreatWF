@@ -523,3 +523,913 @@ Rendering template within layouts/application
 Rendering posts/index
   [4;35;1mPost Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
 Completed in 78ms (View: 62, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (203.1ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (31.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePosts (20100208032036)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mMysql::Error: Table 'posts' already exists: CREATE TABLE `posts` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `context` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (109.4ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (62.5ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreatePosts (20100208032036)
+  [4;35;1mSQL (31.2ms)[0m   [0mCREATE TABLE `posts` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `context` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (31.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100208032036')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (31.2ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `posts`[0m
+  [4;36;1mSQL (62.5ms)[0m   [0;1mSHOW KEYS FROM `posts`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-02-07 19:22:26) [GET]
+  [4;36;1mPost Load (0.0ms)[0m   [0;1mSELECT * FROM `posts` [0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 203ms (View: 203, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#new (for 127.0.0.1 at 2010-02-07 19:22:33) [GET]
+  [4;35;1mPost Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+Rendering template within layouts/application
+Rendering posts/new
+Rendered posts/_form (1515.6ms)
+Completed in 1547ms (View: 1547, DB: 0) | 200 OK [http://localhost/posts/new]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#create (for 127.0.0.1 at 2010-02-07 19:22:48) [POST]
+  Parameters: {"authenticity_token"=>"LRnFXkoMNkyW8El/7ilHq/75yHfxcFqmhTsxCG+JMpk=", "post"=>{"name"=>"SHit son", "context"=>"Let me get it"}, "commit"=>"Submit"}
+  [4;36;1mPost Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mSQL (46.9ms)[0m   [0mBEGIN[0m
+  [4;36;1mPost Create (0.0ms)[0m   [0;1mINSERT INTO `posts` (`name`, `context`, `created_at`, `updated_at`) VALUES('SHit son', 'Let me get it', '2010-02-08 03:22:48', '2010-02-08 03:22:48')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/posts
+Completed in 47ms (DB: 47) | 302 Found [http://localhost/posts]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-02-07 19:22:48) [GET]
+  [4;36;1mPost Load (0.0ms)[0m   [0;1mSELECT * FROM `posts` [0m
+Rendering template within layouts/application
+Rendering posts/index
+  [4;35;1mPost Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+Completed in 16ms (View: 0, DB: 0) | 200 OK [http://localhost/posts]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-02-07 19:23:02) [GET]
+  [4;36;1mPost Load (0.0ms)[0m   [0;1mSELECT * FROM `posts` [0m
+Rendering template within layouts/application
+Rendering posts/index
+  [4;35;1mPost Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+Completed in 16ms (View: 0, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-02-07 19:24:51) [GET]
+  [4;36;1mPost Load (0.0ms)[0m   [0;1mSELECT * FROM `posts` [0m
+Rendering template within layouts/application
+Rendering posts/index
+  [4;35;1mPost Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+Completed in 16ms (View: 0, DB: 16) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-02-07 19:24:54) [GET]
+  [4;36;1mPost Load (0.0ms)[0m   [0;1mSELECT * FROM `posts` [0m
+Rendering template within layouts/application
+Rendering posts/index
+  [4;35;1mPost Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+Completed in 16ms (View: 16, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-02-07 19:25:27) [GET]
+  [4;36;1mPost Load (0.0ms)[0m   [0;1mSELECT * FROM `posts` [0m
+Rendering template within layouts/application
+Rendering posts/index
+  [4;35;1mPost Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+Completed in 141ms (View: 141, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#new (for 127.0.0.1 at 2010-02-07 19:25:30) [GET]
+  [4;36;1mPost Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+Rendering template within layouts/application
+Rendering posts/new
+Rendered posts/_form (0.0ms)
+Completed in 31ms (View: 31, DB: 0) | 200 OK [http://localhost/posts/new]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-02-07 19:25:33) [GET]
+  [4;35;1mPost Load (0.0ms)[0m   [0mSELECT * FROM `posts` [0m
+Rendering template within layouts/application
+Rendering posts/index
+  [4;36;1mPost Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+Completed in 16ms (View: 0, DB: 0) | 200 OK [http://localhost/posts]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-02-07 19:27:02) [GET]
+  [4;36;1mPost Load (0.0ms)[0m   [0;1mSELECT * FROM `posts` [0m
+Rendering template within layouts/application
+Rendering posts/index
+  [4;35;1mPost Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+Completed in 141ms (View: 125, DB: 0) | 200 OK [http://localhost/posts]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-02-07 19:27:08) [GET]
+  [4;36;1mPost Load (0.0ms)[0m   [0;1mSELECT * FROM `posts` [0m
+Rendering template within layouts/application
+Rendering posts/index
+  [4;35;1mPost Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+Completed in 16ms (View: 0, DB: 16) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#new (for 127.0.0.1 at 2010-02-07 19:27:12) [GET]
+  [4;36;1mPost Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+Rendering template within layouts/application
+Rendering posts/new
+Rendered posts/_form (0.0ms)
+Completed in 31ms (View: 31, DB: 0) | 200 OK [http://localhost/posts/new]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-02-07 19:27:15) [GET]
+  [4;35;1mPost Load (0.0ms)[0m   [0mSELECT * FROM `posts` [0m
+Rendering template within layouts/application
+Rendering posts/index
+  [4;36;1mPost Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+Completed in 78ms (View: 16, DB: 0) | 200 OK [http://localhost/posts]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-02-07 19:28:04) [GET]
+  [4;35;1mPost Load (0.0ms)[0m   [0mSELECT * FROM `posts` [0m
+Rendering template within layouts/application
+Rendering posts/index
+  [4;36;1mPost Columns (15.6ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+Completed in 16ms (View: 0, DB: 16) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-02-07 19:28:52) [GET]
+  [4;36;1mPost Load (0.0ms)[0m   [0;1mSELECT * FROM `posts` [0m
+Rendering template within layouts/application
+Rendering posts/index
+  [4;35;1mPost Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+Completed in 141ms (View: 125, DB: 16) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#new (for 127.0.0.1 at 2010-02-07 19:28:55) [GET]
+  [4;36;1mPost Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+Rendering template within layouts/application
+Rendering posts/new
+Rendered posts/_form (15.6ms)
+Completed in 47ms (View: 31, DB: 0) | 200 OK [http://localhost/posts/new]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-02-07 19:28:57) [GET]
+  [4;35;1mPost Load (0.0ms)[0m   [0mSELECT * FROM `posts` [0m
+Rendering template within layouts/application
+Rendering posts/index
+  [4;36;1mPost Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+Completed in 16ms (View: 16, DB: 0) | 200 OK [http://localhost/posts]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#edit (for 127.0.0.1 at 2010-02-07 19:28:59) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPost Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mPost Load (62.5ms)[0m   [0;1mSELECT * FROM `posts` WHERE (`posts`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering posts/edit
+Rendered posts/_form (0.0ms)
+Completed in 156ms (View: 16, DB: 62) | 200 OK [http://localhost/posts/1/edit]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#update (for 127.0.0.1 at 2010-02-07 19:29:02) [PUT]
+  Parameters: {"authenticity_token"=>"LRnFXkoMNkyW8El/7ilHq/75yHfxcFqmhTsxCG+JMpk=", "post"=>{"name"=>"SHit son", "context"=>"Let me get it"}, "commit"=>"Submit", "id"=>"1"}
+  [4;35;1mPost Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mPost Load (0.0ms)[0m   [0;1mSELECT * FROM `posts` WHERE (`posts`.`id` = 1) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/posts
+Completed in 16ms (DB: 0) | 302 Found [http://localhost/posts/1]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-02-07 19:29:02) [GET]
+  [4;35;1mPost Load (0.0ms)[0m   [0mSELECT * FROM `posts` [0m
+Rendering template within layouts/application
+Rendering posts/index
+  [4;36;1mPost Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+Completed in 16ms (View: 16, DB: 0) | 200 OK [http://localhost/posts]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-02-07 19:29:21) [GET]
+  [4;35;1mPost Load (0.0ms)[0m   [0mSELECT * FROM `posts` [0m
+Rendering template within layouts/application
+Rendering posts/index
+  [4;36;1mPost Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+Completed in 16ms (View: 16, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (78.1ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePosts (20100208032036)
+  [4;36;1mSQL (78.1ms)[0m   [0;1mCREATE TABLE `posts` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `context` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100208032036')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `posts`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `posts`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-02-07 19:34:28) [GET]
+  [4;36;1mPost Load (0.0ms)[0m   [0;1mSELECT * FROM `posts` [0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 125ms (View: 109, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-02-07 19:35:18) [GET]
+  [4;35;1mPost Load (15.6ms)[0m   [0mSELECT * FROM `posts` [0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 31ms (View: 16, DB: 16) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#new (for 127.0.0.1 at 2010-02-07 19:35:20) [GET]
+  [4;36;1mPost Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+Rendering template within layouts/application
+Rendering posts/new
+Rendered posts/_form (0.0ms)
+Completed in 47ms (View: 31, DB: 0) | 200 OK [http://localhost/posts/new]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#create (for 127.0.0.1 at 2010-02-07 19:35:27) [POST]
+  Parameters: {"authenticity_token"=>"LRnFXkoMNkyW8El/7ilHq/75yHfxcFqmhTsxCG+JMpk=", "post"=>{"name"=>"fuck", "context"=>"shit\r\n"}, "commit"=>"Submit"}
+  [4;35;1mPost Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPost Create (0.0ms)[0m   [0mINSERT INTO `posts` (`name`, `context`, `created_at`, `updated_at`) VALUES('fuck', 'shit\r\n', '2010-02-08 03:35:27', '2010-02-08 03:35:27')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/posts
+Completed in 16ms (DB: 16) | 302 Found [http://localhost/posts]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-02-07 19:35:27) [GET]
+  [4;35;1mPost Load (0.0ms)[0m   [0mSELECT * FROM `posts` [0m
+Rendering template within layouts/application
+Rendering posts/index
+  [4;36;1mPost Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+Completed in 16ms (View: 0, DB: 0) | 200 OK [http://localhost/posts]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#destroy (for 127.0.0.1 at 2010-02-07 19:35:54) [DELETE]
+  Parameters: {"authenticity_token"=>"LRnFXkoMNkyW8El/7ilHq/75yHfxcFqmhTsxCG+JMpk=", "id"=>"1"}
+  [4;35;1mPost Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mPost Load (0.0ms)[0m   [0;1mSELECT * FROM `posts` WHERE (`posts`.`id` = 1) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mPost Destroy (15.6ms)[0m   [0;1mDELETE FROM `posts` WHERE `id` = 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/posts
+Completed in 31ms (DB: 16) | 302 Found [http://localhost/posts/1]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-02-07 19:35:54) [GET]
+  [4;36;1mPost Load (0.0ms)[0m   [0;1mSELECT * FROM `posts` [0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 16ms (View: 0, DB: 0) | 200 OK [http://localhost/posts]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-02-07 19:39:18) [GET]
+  [4;35;1mPost Load (0.0ms)[0m   [0mSELECT * FROM `posts` [0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 31ms (View: 16, DB: 0) | 200 OK [http://localhost/posts]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#new (for 127.0.0.1 at 2010-02-07 19:39:21) [GET]
+  [4;36;1mPost Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+Rendering template within layouts/application
+Rendering posts/new
+Rendered posts/_form (0.0ms)
+Completed in 16ms (View: 0, DB: 0) | 200 OK [http://localhost/posts/new]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#create (for 127.0.0.1 at 2010-02-07 19:39:26) [POST]
+  Parameters: {"authenticity_token"=>"LRnFXkoMNkyW8El/7ilHq/75yHfxcFqmhTsxCG+JMpk=", "post"=>{"name"=>"", "context"=>""}, "commit"=>"Submit"}
+  [4;35;1mPost Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPost Create (0.0ms)[0m   [0mINSERT INTO `posts` (`name`, `context`, `created_at`, `updated_at`) VALUES('', '', '2010-02-08 03:39:27', '2010-02-08 03:39:27')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/posts
+Completed in 16ms (DB: 0) | 302 Found [http://localhost/posts]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-02-07 19:39:27) [GET]
+  [4;35;1mPost Load (0.0ms)[0m   [0mSELECT * FROM `posts` [0m
+Rendering template within layouts/application
+Rendering posts/index
+  [4;36;1mPost Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+Completed in 16ms (View: 16, DB: 0) | 200 OK [http://localhost/posts]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#destroy (for 127.0.0.1 at 2010-02-07 19:39:33) [DELETE]
+  Parameters: {"authenticity_token"=>"LRnFXkoMNkyW8El/7ilHq/75yHfxcFqmhTsxCG+JMpk=", "id"=>"2"}
+  [4;35;1mPost Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mPost Load (0.0ms)[0m   [0;1mSELECT * FROM `posts` WHERE (`posts`.`id` = 2) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mPost Destroy (0.0ms)[0m   [0;1mDELETE FROM `posts` WHERE `id` = 2[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/posts
+Completed in 31ms (DB: 31) | 302 Found [http://localhost/posts/2]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-02-07 19:39:33) [GET]
+  [4;36;1mPost Load (0.0ms)[0m   [0;1mSELECT * FROM `posts` [0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 0ms (View: 0, DB: 0) | 200 OK [http://localhost/posts]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-02-07 19:42:05) [GET]
+  [4;36;1mPost Load (0.0ms)[0m   [0;1mSELECT * FROM `posts` [0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 125ms (View: 125, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#new (for 127.0.0.1 at 2010-02-07 19:42:07) [GET]
+  [4;35;1mPost Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+Rendering template within layouts/application
+Rendering posts/new
+Rendered posts/_form (15.6ms)
+Completed in 47ms (View: 31, DB: 16) | 200 OK [http://localhost/posts/new]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#create (for 127.0.0.1 at 2010-02-07 19:42:09) [POST]
+  Parameters: {"authenticity_token"=>"LRnFXkoMNkyW8El/7ilHq/75yHfxcFqmhTsxCG+JMpk=", "post"=>{"name"=>"", "context"=>""}, "commit"=>"Submit"}
+  [4;36;1mPost Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mPost Create (15.6ms)[0m   [0;1mINSERT INTO `posts` (`name`, `context`, `created_at`, `updated_at`) VALUES('', '', '2010-02-08 03:42:09', '2010-02-08 03:42:09')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/posts
+Completed in 16ms (DB: 16) | 302 Found [http://localhost/posts]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-02-07 19:42:09) [GET]
+  [4;36;1mPost Load (0.0ms)[0m   [0;1mSELECT * FROM `posts` [0m
+Rendering template within layouts/application
+Rendering posts/index
+  [4;35;1mPost Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+Completed in 78ms (View: 62, DB: 0) | 200 OK [http://localhost/posts]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#destroy (for 127.0.0.1 at 2010-02-07 19:42:12) [DELETE]
+  Parameters: {"authenticity_token"=>"LRnFXkoMNkyW8El/7ilHq/75yHfxcFqmhTsxCG+JMpk=", "id"=>"3"}
+  [4;36;1mPost Columns (15.6ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mPost Load (0.0ms)[0m   [0mSELECT * FROM `posts` WHERE (`posts`.`id` = 3) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPost Destroy (0.0ms)[0m   [0mDELETE FROM `posts` WHERE `id` = 3[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/posts
+Completed in 16ms (DB: 16) | 302 Found [http://localhost/posts/3]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-02-07 19:42:12) [GET]
+  [4;35;1mPost Load (0.0ms)[0m   [0mSELECT * FROM `posts` [0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 0ms (View: 0, DB: 0) | 200 OK [http://localhost/posts]
+  [4;36;1mSQL (171.9ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-03-02 14:19:43) [GET]
+  [4;36;1mPost Load (390.6ms)[0m   [0;1mSELECT * FROM `posts` [0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 2328ms (View: 1922, DB: 578) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#new (for 127.0.0.1 at 2010-03-02 14:20:23) [GET]
+  [4;35;1mPost Columns (62.5ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+Rendering template within layouts/application
+Rendering posts/new
+Rendered posts/_form (15.6ms)
+Completed in 141ms (View: 62, DB: 62) | 200 OK [http://localhost/posts/new]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#create (for 127.0.0.1 at 2010-03-02 14:20:38) [POST]
+  Parameters: {"authenticity_token"=>"qnDqm0dRNb+fGd2uATvFiD2ojOSP3a8nYX9dMt3Q4Fo=", "post"=>{"name"=>"Foo", "context"=>"Bar"}, "commit"=>"Submit"}
+  [4;36;1mPost Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mSQL (31.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mPost Create (171.9ms)[0m   [0;1mINSERT INTO `posts` (`name`, `context`, `created_at`, `updated_at`) VALUES('Foo', 'Bar', '2010-03-02 22:20:38', '2010-03-02 22:20:38')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/posts
+Completed in 219ms (DB: 203) | 302 Found [http://localhost/posts]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-03-02 14:20:38) [GET]
+  [4;36;1mPost Load (15.6ms)[0m   [0;1mSELECT * FROM `posts` [0m
+Rendering template within layouts/application
+Rendering posts/index
+  [4;35;1mPost Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+Completed in 16ms (View: 0, DB: 16) | 200 OK [http://localhost/posts]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#destroy (for 127.0.0.1 at 2010-03-02 14:21:29) [DELETE]
+  Parameters: {"authenticity_token"=>"qnDqm0dRNb+fGd2uATvFiD2ojOSP3a8nYX9dMt3Q4Fo=", "id"=>"1"}
+  [4;36;1mPost Columns (343.8ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mPost Load (46.9ms)[0m   [0mSELECT * FROM `posts` WHERE (`posts`.`id` = 1) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPost Destroy (31.2ms)[0m   [0mDELETE FROM `posts` WHERE `id` = 1[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/posts
+Completed in 438ms (DB: 438) | 302 Found [http://localhost/posts/1]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-03-02 14:21:29) [GET]
+  [4;35;1mPost Load (15.6ms)[0m   [0mSELECT * FROM `posts` [0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 47ms (View: 0, DB: 16) | 200 OK [http://localhost/posts]
+  [4;36;1mSQL (156.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (46.9ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (312.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (234.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePosts (20100208032036)
+Migrating to CreateUsers (20100302223920)
+  [4;36;1mSQL (156.2ms)[0m   [0;1mCREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `username` varchar(255), `email` varchar(255), `crypted_password` varchar(255), `password_salt` varchar(255), `persistence_token` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (31.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100302223920')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (93.8ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `posts`[0m
+  [4;35;1mSQL (62.5ms)[0m   [0mSHOW KEYS FROM `posts`[0m
+  [4;36;1mSQL (140.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-03-02 14:55:50) [GET]
+  [4;36;1mPost Load (0.0ms)[0m   [0;1mSELECT * FROM `posts` [0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 484ms (View: 469, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-03-02 14:59:27) [GET]
+  [4;35;1mUser Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (31.2ms)
+Completed in 188ms (View: 141, DB: 0) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-03-02 15:01:18) [GET]
+  [4;36;1mPost Load (0.0ms)[0m   [0;1mSELECT * FROM `posts` [0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 250ms (View: 234, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-03-02 15:01:21) [GET]
+  [4;35;1mUser Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (15.6ms)
+Completed in 172ms (View: 125, DB: 0) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-03-02 15:01:39) [POST]
+  Parameters: {"authenticity_token"=>"qnDqm0dRNb+fGd2uATvFiD2ojOSP3a8nYX9dMt3Q4Fo=", "user"=>{"username"=>"juanlove", "email"=>"juanms88@gmail.com", "password"=>"emeoscure", "password_confirmation"=>"emeoscure"}, "commit"=>"Submit"}
+  [4;36;1mUser Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+WARNING: Can't mass-assign these protected attributes: password_confirmation
+  [4;35;1mSQL (31.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (78.1ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'juanms88@gmail.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY 'juanlove') LIMIT 1[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '50f1fb33ba742457431d557abccc829f283c81941d41f202e755078e2e9c9406d2810ad6682686c45ca946229a91e0ff8c2a1b41961a53444c6e35239e01273b') LIMIT 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (78.1ms)
+Completed in 1922ms (View: 78, DB: 109) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-03-02 15:01:59) [POST]
+  Parameters: {"authenticity_token"=>"qnDqm0dRNb+fGd2uATvFiD2ojOSP3a8nYX9dMt3Q4Fo=", "user"=>{"username"=>"juanlove", "email"=>"juanms88@gmail.com", "password"=>"emeoscure", "password_confirmation"=>"emeoscure"}, "commit"=>"Submit"}
+  [4;36;1mUser Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+WARNING: Can't mass-assign these protected attributes: password_confirmation
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'juanms88@gmail.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY 'juanlove') LIMIT 1[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '32ae0fe76c7136d941165b083da2e7540611ef1a139cb12a038dd8f7da12a4ab8f5a31d46303b4a7e4400a10b1cc69da89a77d0cac0f45c3a2faea55ac2e4366') LIMIT 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (15.6ms)
+Completed in 47ms (View: 16, DB: 0) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-03-02 15:02:16) [POST]
+  Parameters: {"authenticity_token"=>"qnDqm0dRNb+fGd2uATvFiD2ojOSP3a8nYX9dMt3Q4Fo=", "user"=>{"username"=>"juanlove", "email"=>"juanms88@gmail.com", "password"=>"god", "password_confirmation"=>"god"}, "commit"=>"Submit"}
+  [4;36;1mUser Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+WARNING: Can't mass-assign these protected attributes: password_confirmation
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'juanms88@gmail.com') LIMIT 1[0m
+  [4;35;1mUser Load (15.6ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY 'juanlove') LIMIT 1[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '635b23bfc0fe65ee450b1e32096fcab09827ecb7696cdf173a506509843a6996ba710d82a3323c4a0e36909d659329f3b0884aa5b00b2b158615462982f24233') LIMIT 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (0.0ms)
+Completed in 31ms (View: 0, DB: 16) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-03-02 15:02:27) [POST]
+  Parameters: {"authenticity_token"=>"qnDqm0dRNb+fGd2uATvFiD2ojOSP3a8nYX9dMt3Q4Fo=", "user"=>{"username"=>"juanlove", "email"=>"juanms88@gmail.com", "password"=>"ghost", "password_confirmation"=>"ghost"}, "commit"=>"Submit"}
+  [4;36;1mUser Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+WARNING: Can't mass-assign these protected attributes: password_confirmation
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'juanms88@gmail.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY 'juanlove') LIMIT 1[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '569f0f828e057808629bee3a3318e5b466ff98149538c2ef3b8bd2b2223784f5cff4af8f703e6943ce10e31f673eb1ac8a8c3a580174ca93fd70b81b4d8d1f57') LIMIT 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (15.6ms)
+Completed in 47ms (View: 16, DB: 0) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-03-02 15:03:49) [POST]
+  Parameters: {"authenticity_token"=>"qnDqm0dRNb+fGd2uATvFiD2ojOSP3a8nYX9dMt3Q4Fo=", "user"=>{"username"=>"juanlove", "email"=>"juanms88@gmail.com", "password"=>"emeoscure", "password_confirmation"=>"emeoscure"}, "commit"=>"Submit"}
+  [4;36;1mUser Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'juanms88@gmail.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY 'juanlove') LIMIT 1[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY 'ee0936000341368bbbbb9e0658ec7829a2b6c4864a5afceb1f2826fc0b29b65027af87c032eec22899df99b9e2a2af1e614fb47577158c29c41d64f6f49146af') LIMIT 1[0m
+  [4;35;1mUser Create (46.9ms)[0m   [0mINSERT INTO `users` (`username`, `email`, `crypted_password`, `password_salt`, `persistence_token`, `created_at`, `updated_at`) VALUES('juanlove', 'juanms88@gmail.com', '8f52bdb0469d313d3b0e0de85a7daca577b0d7e4bed33ad0b03ad6b71442c58cc6eb363c020cf13109f8b3b503b3cb411524ade0cb93c1e7f20ac7850fff02e3', 'oy_0LeLjIF8tSw-MNbJU', 'ee0936000341368bbbbb9e0658ec7829a2b6c4864a5afceb1f2826fc0b29b65027af87c032eec22899df99b9e2a2af1e614fb47577158c29c41d64f6f49146af', '2010-03-02 23:03:49', '2010-03-02 23:03:49')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed in 78ms (DB: 47) | 302 Found [http://localhost/users]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-03-02 15:03:49) [GET]
+  [4;35;1mPost Load (0.0ms)[0m   [0mSELECT * FROM `posts` [0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 16ms (View: 0, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-03-02 15:16:05) [GET]
+  [4;36;1mPost Load (0.0ms)[0m   [0;1mSELECT * FROM `posts` [0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 297ms (View: 297, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-03-02 15:16:09) [GET]
+  [4;35;1mUser Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 141ms (View: 94, DB: 0) | 200 OK [http://localhost/login]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-03-02 15:16:15) [POST]
+  Parameters: {"authenticity_token"=>"qnDqm0dRNb+fGd2uATvFiD2ojOSP3a8nYX9dMt3Q4Fo=", "user_session"=>{"username"=>"juanlove", "password"=>"luv"}, "commit"=>"Submit"}
+  [4;36;1mUser Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (31.2ms)[0m   [0mSELECT * FROM `users` WHERE (LOWER(`users`.username) = 'juanlove') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 156ms (View: 0, DB: 31) | 200 OK [http://localhost/user_sessions]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-03-02 15:16:55) [POST]
+  Parameters: {"authenticity_token"=>"qnDqm0dRNb+fGd2uATvFiD2ojOSP3a8nYX9dMt3Q4Fo=", "user_session"=>{"username"=>"juanlove", "password"=>"emeoscure"}, "commit"=>"Submit"}
+  [4;36;1mUser Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (LOWER(`users`.username) = 'juanlove') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 47ms (DB: 0) | 302 Found [http://localhost/user_sessions]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-03-02 15:16:56) [GET]
+  [4;36;1mPost Load (0.0ms)[0m   [0;1mSELECT * FROM `posts` [0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 0ms (View: 0, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-03-02 15:30:13) [GET]
+  [4;35;1mPost Load (0.0ms)[0m   [0mSELECT * FROM `posts` [0m
+Rendering template within layouts/application
+Rendering posts/index
+  [4;36;1mUser Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (31.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+Completed in 203ms (View: 172, DB: 31) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-03-02 15:30:33) [POST]
+  Parameters: {"authenticity_token"=>"qnDqm0dRNb+fGd2uATvFiD2ojOSP3a8nYX9dMt3Q4Fo=", "user_session"=>{"username"=>"juanlove", "password"=>"emeoscure"}, "commit"=>"Submit"}
+  [4;36;1mUser Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (LOWER(`users`.username) = 'juanlove') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 47ms (DB: 0) | 302 Found [http://localhost/user_sessions]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-03-02 15:30:33) [GET]
+  [4;36;1mPost Load (0.0ms)[0m   [0;1mSELECT * FROM `posts` [0m
+Rendering template within layouts/application
+Rendering posts/index
+  [4;35;1mUser Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+Completed in 31ms (View: 31, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-03-02 15:30:52) [GET]
+  [4;35;1mPost Load (0.0ms)[0m   [0mSELECT * FROM `posts` [0m
+Rendering template within layouts/application
+Rendering posts/index
+  [4;36;1mUser Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+Completed in 47ms (View: 31, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-03-02 15:31:37) [GET]
+  [4;36;1mPost Load (0.0ms)[0m   [0;1mSELECT * FROM `posts` [0m
+Rendering template within layouts/application
+Rendering posts/index
+  [4;35;1mUser Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+Completed in 125ms (View: 109, DB: 16) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-03-02 15:31:41) [GET]
+  Parameters: {"id"=>"current"}
+  [4;35;1mUser Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find User with ID=current):
+  app/controllers/users_controller.rb:17:in `edit'
+  <internal:prelude>:8:in `synchronize'
+  C:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  C:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  C:/Ruby19/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (93.8ms)
+Rendered rescues/_request_and_response (31.2ms)
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-03-02 15:33:43) [GET]
+  Parameters: {"id"=>"current"}
+  [4;35;1mUser Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/edit
+Rendered users/_form (31.2ms)
+Completed in 109ms (View: 78, DB: 0) | 200 OK [http://localhost/users/current/edit]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#update (for 127.0.0.1 at 2010-03-02 15:34:13) [PUT]
+  Parameters: {"authenticity_token"=>"qnDqm0dRNb+fGd2uATvFiD2ojOSP3a8nYX9dMt3Q4Fo=", "user"=>{"username"=>"juanlove", "email"=>"juanms88@gmail.com", "password"=>"", "password_confirmation"=>""}, "commit"=>"Submit", "id"=>"1"}
+  [4;35;1mUser Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed in 78ms (DB: 0) | 302 Found [http://localhost/users/1]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-03-02 15:34:13) [GET]
+  [4;35;1mPost Load (0.0ms)[0m   [0mSELECT * FROM `posts` [0m
+Rendering template within layouts/application
+Rendering posts/index
+  [4;36;1mUser Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+Completed in 188ms (View: 172, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-03-02 15:34:16) [GET]
+  Parameters: {"id"=>"current"}
+  [4;36;1mUser Columns (15.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/edit
+Rendered users/_form (0.0ms)
+Completed in 31ms (View: 0, DB: 16) | 200 OK [http://localhost/users/current/edit]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2010-03-02 15:34:32) [GET]
+  [4;36;1mUser Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 31ms (DB: 0) | 302 Found [http://localhost/logout]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-03-02 15:34:32) [GET]
+  [4;36;1mPost Load (0.0ms)[0m   [0;1mSELECT * FROM `posts` [0m
+Rendering template within layouts/application
+Rendering posts/index
+  [4;35;1mUser Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Completed in 31ms (View: 16, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-03-02 15:42:41) [GET]
+  [4;36;1mUser Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 31ms (View: 16, DB: 0) | 200 OK [http://localhost/login]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-03-02 15:42:49) [POST]
+  Parameters: {"authenticity_token"=>"qnDqm0dRNb+fGd2uATvFiD2ojOSP3a8nYX9dMt3Q4Fo=", "user_session"=>{"username"=>"juanlove", "password"=>"emeoscure"}, "commit"=>"Submit"}
+  [4;35;1mUser Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (LOWER(`users`.username) = 'juanlove') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 31ms (DB: 0) | 302 Found [http://localhost/user_sessions]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-03-02 15:42:49) [GET]
+  [4;35;1mPost Load (0.0ms)[0m   [0mSELECT * FROM `posts` [0m
+Rendering template within layouts/application
+Rendering posts/index
+  [4;36;1mUser Columns (15.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+Completed in 47ms (View: 16, DB: 16) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2010-03-02 15:42:54) [GET]
+  [4;36;1mUser Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 16ms (DB: 0) | 302 Found [http://localhost/logout]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-03-02 15:42:54) [GET]
+  [4;36;1mPost Load (0.0ms)[0m   [0;1mSELECT * FROM `posts` [0m
+Rendering template within layouts/application
+Rendering posts/index
+  [4;35;1mUser Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Completed in 109ms (View: 94, DB: 0) | 200 OK [http://localhost/]
